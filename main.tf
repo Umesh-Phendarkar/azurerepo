@@ -1,8 +1,9 @@
 terraform {
+  required_version = ">=1.3.7"
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "=3.0.0"
+      version = "3.41.0"
     }
   }
 }
@@ -12,8 +13,19 @@ provider "azurerm" {
   features {}
 }
 
-# Define the resource group
-resource "azurerm_resource_group" "example" {
-  name     = "my-resource-group"
-  location = "East US"
+terraform {
+  cloud {
+
+    organization = "feb2025"
+
+    workspaces {
+      name = "workspacecli"
+    }
+  }
 }
+
+resource "azurerm_resource_group" "rg04" {
+  location = "Central India"
+  name     = "rg04"
+}
+
