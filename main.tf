@@ -1,14 +1,22 @@
 terraform {
-  required_version = ">=1.3.7"
+  required_version = ">=0.12"
+
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "3.41.0"
+      version = "~>2.0"
+    }
+    random = {
+      source  = "hashicorp/random"
+      version = "~>3.0"
+    }
+    tls = {
+      source  = "hashicorp/tls"
+      version = "~>4.0"
     }
   }
 }
 
-# Configure the Microsoft Azure Provider
 provider "azurerm" {
   features {}
 }
@@ -19,10 +27,11 @@ terraform {
     organization = "feb2025"
 
     workspaces {
-      name = "workspacecli"
+      name = "azurerepo02"
     }
   }
 }
+
 
 resource "azurerm_resource_group" "rg04" {
   location = "Central India"
