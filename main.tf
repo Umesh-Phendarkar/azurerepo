@@ -37,7 +37,7 @@ provider "azurerm" {
   tenant_id       = var.tenant_id
 }
 
-resource "azurerm_resource_group" "example" {
+resource "azurerm_resource_group" "example1" {
   name     = var.resource_group_name
   location = var.resource_group_location
 }
