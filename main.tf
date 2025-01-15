@@ -36,9 +36,7 @@ terraform {
   }
 }
 
-
 resource "azurerm_resource_group" "rg04" {
   location = "Central India"
   name     = "rg04"
 }
-
