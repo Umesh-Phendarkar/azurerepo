@@ -17,16 +17,6 @@ terraform {
   }
 }
 
-terraform {
-  backend "remote" {
-    organization = "azureorg"
-
-    workspaces {
-      name = "azurerepo"
-    }
-  }
-}
-
 provider "azurerm" {
   features {}
 
