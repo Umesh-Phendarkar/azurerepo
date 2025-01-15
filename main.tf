@@ -27,7 +27,7 @@ terraform {
     organization = "feb2025"
 
     workspaces {
-      name = "azurerepo02"
+      name = "azureworkspace"
     }
   }
 }
