@@ -31,11 +31,11 @@ terraform {
 provider "azurerm" {
   features {}
 
-  client_id       = var.client_id
-  client_secret   = var.client_secret
-  subscription_id = var.subscription_id
-  tenant_id       = var.tenant_id
-  token           = var.token
+  ARM_CLIENT_ID       = var.ARM_CLIENT_ID
+  ARM_CLIENT_SECRET   = var.ARM_CLIENT_SECRET
+  ARM_SUBSCRIPTION_ID = var.ARM_SUBSCRIPTION_ID
+  ARM_TENANT_ID       = var.ARM_TENANT_ID
+  TF_API_TOKEN        = var.TF_API_TOKEN
 }
 
 resource "azurerm_resource_group" "example1" {
