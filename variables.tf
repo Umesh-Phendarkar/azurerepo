@@ -18,6 +18,10 @@ variable "tenant_id" {
   description = "Azure Tenant ID"
   type        = string
 }
+variable "token" {
+  description = "Terraform Token"
+  type        = string
+}
 
 variable "resource_group_name" {
   description = "The name of the Azure Resource Group"
