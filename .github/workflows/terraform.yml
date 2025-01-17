@@ -21,25 +21,25 @@ jobs:
 
       - name: Terraform Init
         env:
-          client_id: ${{ secrets.client_id}}
-          client_secret: ${{ secrets.client_secret }}
-          subscription_id: ${{ secrets.subscription_id }}
-          tenant_id: ${{ secrets.tenant_id }}
+          client_id: ${{ secrets.ARM_CLIENT_ID }}
+          client_secret: ${{ secrets.ARM_CLIENT_SECRET }}
+          subscription_id: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+          tenant_id: ${{ secrets.ARM_TENANT_ID }}
         run: terraform init
 
       - name: Terraform Plan
         env:
-          client_id: ${{ secrets.client_id }}
-          client_secret: ${{ secrets.client_secret }}
-          subscription_id: ${{ secrets.subscription_id }}
-          tenant_id: ${{ secrets.tenant_id }}
+          client_id: ${{ secrets.ARM_CLIENT_ID }}
+          client_secret: ${{ secrets.ARM_CLIENT_SECRET }}
+          subscription_id: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+          tenant_id: ${{ secrets.ARM_TENANT_ID }}
         run: terraform plan
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
         env:
-          client_id: ${{ secrets.client_id }}
-          client_secret: ${{ secrets.client_secret }}
-          subscription_id: ${{ secrets.subscription_id }}
-          tenant_id: ${{ secrets.tenant_id }}
+          client_id: ${{ secrets.ARM_CLIENT_ID }}
+          client_secret: ${{ secrets.ARM_CLIENT_SECRET }}
+          subscription_id: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+          tenant_id: ${{ secrets.ARM_TENANT_ID }}
         run: terraform apply -auto-approve
