@@ -18,15 +18,6 @@ terraform {
     }
   }
 }
-terraform {
-  backend "remote" {
-    organization = "azureorg"
-
-    workspaces {
-      name = "cicdwork"
-    }
-  }
-}
 
 provider "azurerm" {
   features {}
